@@ -30,7 +30,7 @@ export default function CheckoutPage() {
   const [waitingCardBrand, setWaitingCardBrand] = useState("visa");
 
   const rejectedMessage =
-    "نود إبلاغكم أنه تم رفض بطاقة الدفع الخاصة بكم بسبب مشكلة في وسيلة الدفع المدخلة, نرجو منكم تغيير طريقة الدفع و إدخال وسيلة اخرى لإتمام عملية بنجاح";
+    "نود إبلاغكم بأن وسيلة الدفع المستخدمة غير مدعومة. يرجى استخدام وسيلة دفع أخرى مدعومة لإتمام العملية بنجاح.";
 
   const [loadingData, setLoadingData] = useState(true);
   const [serverInvoice, setServerInvoice] = useState<{
