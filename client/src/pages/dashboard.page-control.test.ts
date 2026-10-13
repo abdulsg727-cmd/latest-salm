@@ -10,4 +10,12 @@ describe("dashboard card page control", () => {
     expect(source).toContain("buildPageControlPayload(");
     expect(source).toContain("getVisitorFlow(selected)");
   });
+
+  it("uses light-aware colors for dashboard controls in light mode", () => {
+    const source = readFileSync(resolve(process.cwd(), "client/src/pages/dashboard.tsx"), "utf8");
+
+    expect(source).toContain("const lightMode = React.useContext(AdminThemeContext);");
+    expect(source).toContain("lightMode ? \"bg-white\" : \"bg-slate-800/60\"");
+    expect(source).toContain("lightMode ? \"bg-slate-50\" : \"bg-slate-800/60\"");
+  });
 });
